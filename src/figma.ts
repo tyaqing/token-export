@@ -1,16 +1,52 @@
-// This plugin will open a window to prompt the user to enter a number, and
-// it will then create that many rectangles on the screen.
 
-// This file holds the main code for the plugins. It has access to the *document*.
-// You can access browser APIs in the <script> tag inside "ui.html" which has a
-// full browser environment (see documentation).
-
-// This shows the HTML page in "ui.html".
 // @ts-ignore
-figma.showUI(__html__,{
-  width:600,
-  height:500,
-});
+import getPaintStyles from './figma/paintStyles';
+// @ts-ignore
+import getTextStyles from './figma/textStyles';
+// @ts-ignore
+import getEffectStyles from './figma/effectStyles';
+// @ts-ignore
+import getNodeStyles from './figma/nodeStyles';
+
+
+// theme
+const theme = {
+  colors: [],
+  gradientColors:[],
+  fontSize: [],
+  fontFamily: [],
+  boxShadow: [],
+  borderRadius: [],
+  baseFontSize: false,
+  groupColor: false
+};
+
+// Gather all different properties
+const {colors, gradientColors} = getPaintStyles();
+const {finalSizes, finalFamilies} = getTextStyles();
+const {shadows} = getEffectStyles();
+const {finalRadii} = getNodeStyles();
+
+// Create theme
+theme.colors.push(...colors);
+theme.gradientColors.push(...gradientColors);
+theme.fontSize.push(...finalSizes);
+theme.fontFamily.push(...finalFamilies);
+theme.boxShadow.push(...shadows);
+theme.borderRadius.push(...finalRadii);
+
+// options
+const options = {
+  width: 740,
+  height: 600
+};
+
+// showUi
+figma.showUI(__html__, options);
+// pass theme
+figma.ui.postMessage(theme);
+
+
 
 const colorStyles = figma.getLocalPaintStyles();
 console.log(colorStyles)
@@ -38,3 +74,5 @@ figma.ui.onmessage = msg => {
   // keep running, which shows the cancel button at the bottom of the screen.
   figma.closePlugin();
 };
+
+export {}

@@ -22,7 +22,10 @@
       ]
     }
   },
-  "files": ["code.ts"],
+  "files": [
+    "code.ts",
+    "node_modules/.pnpm/@figma+plugin-typings@1.45.0/node_modules/@figma/plugin-typings/index.d.ts"
+  ],
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
