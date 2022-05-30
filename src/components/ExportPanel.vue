@@ -5,7 +5,7 @@
 </template>
 <script lang="ts" setup>
 import { computed, defineProps } from 'vue'
-import { ITheme } from '@/business'
+import { ITheme, KV } from '@/business'
 import { PrismEditor } from 'vue-prism-editor'
 import 'vue-prism-editor/dist/prismeditor.min.css' // import the styles somewhere
 import beautify from 'js-beautify'
@@ -19,16 +19,14 @@ const code = computed(() => {
   // 处理拼装
   const { theme } = props
   const config = {}
-  // 处理颜色
-  theme.colors.forEach((item) => {
-    const path = item.name.replace(/\//g, '.')
-    set(config, 'colors.' + path, item.value)
-  })
-  // 处理字体
-  theme.fontFamily.forEach((item) => {
-    const path = item.name.replace(/\//g, '.')
-    console.log(path)
-    set(config, 'fontFamily.' + path, item.value)
+  // 处理配置
+  Object.entries(theme).forEach(([key, value]) => {
+    console.log(value)
+    value.length &&
+      value.forEach((item: KV) => {
+        const path = item.name.replace(/\//g, '.')
+        set(config, key + '.' + path, item.value)
+      })
   })
   // 处理字号
   const str = JSON.stringify(config)

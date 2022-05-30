@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid grid-cols-4 gap-16px">
+    <div class="grid grid-cols-4 gap-20px">
       <div
         v-for="item of props.boxShadow"
         :key="item.name"

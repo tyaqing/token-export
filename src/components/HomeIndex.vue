@@ -1,10 +1,20 @@
 <template>
   <div>
     <a-tabs size="small" :tab-bar-gutter="10" :active-key="currentView" @change="changeViewPanel">
-      <a-tab-pane v-for="panel of Object.values(ViewPanel)" :key="panel" :tab="panel"></a-tab-pane>
+      <a-tab-pane
+        v-for="panel of Object.values(ViewPanel)"
+        :key="panel"
+        :tab="ViewPanelNameMapping[panel]"
+      ></a-tab-pane>
     </a-tabs>
   </div>
-  <div class="mt-12px flex-1 h-full overflow-auto">
+  <!--这里overflow在阴影下可能有坑，就是tab拦也滚动，暂时先不处理，应该不会有人用9个以上的shadow吧-->
+  <div
+    class="mt-12px flex-1 h-full"
+    :class="{
+      'overflow-auto': currentView !== ViewPanel.SHADOW,
+    }"
+  >
     <!--颜色-->
     <ColorsPanel v-show="currentView === ViewPanel.COLORS" :colors="theme.colors"></ColorsPanel>
     <!--字体/字号-->
@@ -24,7 +34,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { ITheme, ViewPanel } from '@/business'
+import { ITheme, ViewPanel, ViewPanelNameMapping } from '@/business'
 import ColorsPanel from '@/components/ColorsPanel.vue'
 import TypographyPanel from '@/components/TypographyPanel.vue'
 import ShadowPanel from '@/components/ShadowPanel.vue'
