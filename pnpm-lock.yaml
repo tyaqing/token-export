@@ -19,12 +19,14 @@ specifiers:
   vite-plugin-singlefile: ^0.7.1
   vite-plugin-windicss: ^1.8.4
   vue: ^3.2.25
+  vue-prism-editor: 2.0.0-alpha.2
   vue-tsc: ^0.34.7
   windicss: ^3.5.1
 
 dependencies:
   ant-design-vue: 3.2.5_vue@3.2.33
   vue: 3.2.33
+  vue-prism-editor: 2.0.0-alpha.2_vue@3.2.33
 
 devDependencies:
   '@figma/plugin-typings': 1.45.0
@@ -2215,6 +2217,15 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /vue-prism-editor/2.0.0-alpha.2_vue@3.2.33:
+    resolution: {integrity: sha512-Gu42ba9nosrE+gJpnAEuEkDMqG9zSUysIR8SdXUw8MQKDjBnnNR9lHC18uOr/ICz7yrA/5c7jHJr9lpElODC7w==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.2.33
+    dev: false
 
   /vue-tsc/0.34.10_typescript@4.6.3:
     resolution: {integrity: sha512-rWU4SjDqk9ylQN2hbnyP+rEu8W2a712DWUmciX6rDnId1m8sN/cuypTKjWjHHjaBLWNKULoEakRTOvrQ4ainhw==}
