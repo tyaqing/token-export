@@ -27,6 +27,8 @@ specifiers:
   vue: ^3.2.25
   vue-prism-editor: 2.0.0-alpha.2
   vue-tsc: ^0.34.7
+  vuex: ^4.0.2
+  vuex-module-decorators: ^2.0.0
   windicss: ^3.5.1
 
 dependencies:
@@ -36,6 +38,8 @@ dependencies:
   prismjs: 1.28.0
   vue: 3.2.33
   vue-prism-editor: 2.0.0-alpha.2_vue@3.2.33
+  vuex: 4.0.2_vue@3.2.33
+  vuex-module-decorators: 2.0.0_vue@3.2.33+vuex@4.0.2
 
 devDependencies:
   '@figma/plugin-typings': 1.45.0
@@ -445,6 +449,10 @@ packages:
     dependencies:
       '@vue/compiler-dom': 3.2.33
       '@vue/shared': 3.2.33
+
+  /@vue/devtools-api/6.1.4:
+    resolution: {integrity: sha512-IiA0SvDrJEgXvVxjNkHPFfDx6SXw0b/TUkqMcDZWNg9fnCAHbTpoo59YfJ9QLFkwa3raau5vSlRVzMSLDnfdtQ==}
+    dev: false
 
   /@vue/eslint-config-prettier/7.0.0_yzlwycfcjzj3trzruaflx2c53m:
     resolution: {integrity: sha512-/CTc6ML3Wta1tCe1gUeO0EYnVXfo3nJXsIhZ8WJr3sov+cGASr6yuiibJTL6lmIBm7GobopToOuB3B6AWyV0Iw==}
@@ -2358,6 +2366,27 @@ packages:
       '@vue/runtime-dom': 3.2.33
       '@vue/server-renderer': 3.2.33_vue@3.2.33
       '@vue/shared': 3.2.33
+
+  /vuex-module-decorators/2.0.0_vue@3.2.33+vuex@4.0.2:
+    resolution: {integrity: sha512-awfjlJR9PlX2tDNzRk5fUnksO4TC5Z93Q3ZycvROCiLId7MZ1GdY4sHpEvPqm02UZ8jF+BkuyN5ezghOAk3zeQ==}
+    engines: {node: '>= 8', npm: '>= 5', yarn: '>= 1'}
+    requiresBuild: true
+    peerDependencies:
+      vue: '>=3'
+      vuex: '>=4'
+    dependencies:
+      vue: 3.2.33
+      vuex: 4.0.2_vue@3.2.33
+    dev: false
+
+  /vuex/4.0.2_vue@3.2.33:
+    resolution: {integrity: sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==}
+    peerDependencies:
+      vue: ^3.0.2
+    dependencies:
+      '@vue/devtools-api': 6.1.4
+      vue: 3.2.33
+    dev: false
 
   /warning/4.0.3:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}

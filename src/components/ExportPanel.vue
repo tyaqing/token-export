@@ -14,6 +14,7 @@ import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/themes/prism-tomorrow.css' // import syntax highlighting styles
 import { set } from 'lodash'
+import GlobalStore from '@/store/global'
 // code
 const code = computed(() => {
   // 处理拼装
@@ -28,8 +29,12 @@ const code = computed(() => {
         set(config, key + '.' + path, item.value)
       })
   })
-  // 处理字号
-  const str = JSON.stringify(config)
+  // 处理spacing
+  const { spacing } = GlobalStore
+  const str = JSON.stringify({
+    config,
+    spacing,
+  })
   return beautify(str)
 })
 const props = defineProps<{

@@ -5,7 +5,10 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AButton: typeof import('ant-design-vue/es')['Button']
+    AForm: typeof import('ant-design-vue/es')['Form']
+    AFormItem: typeof import('ant-design-vue/es')['FormItem']
+    AInput: typeof import('ant-design-vue/es')['Input']
+    AInputNumber: typeof import('ant-design-vue/es')['InputNumber']
     ATabPane: typeof import('ant-design-vue/es')['TabPane']
     ATabs: typeof import('ant-design-vue/es')['Tabs']
     ColorsPanel: typeof import('./src/components/ColorsPanel.vue')['default']
@@ -13,6 +16,7 @@ declare module '@vue/runtime-core' {
     HomeIndex: typeof import('./src/components/HomeIndex.vue')['default']
     RadiusPanel: typeof import('./src/components/RadiusPanel.vue')['default']
     ShadowPanel: typeof import('./src/components/ShadowPanel.vue')['default']
+    SpacingPanel: typeof import('./src/components/SpacingPanel.vue')['default']
     TypographyPanel: typeof import('./src/components/TypographyPanel.vue')['default']
   }
 }

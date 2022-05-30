@@ -14,7 +14,9 @@
     "lodash": "^4.17.21",
     "prismjs": "^1.28.0",
     "vue": "^3.2.25",
-    "vue-prism-editor": "2.0.0-alpha.2"
+    "vue-prism-editor": "2.0.0-alpha.2",
+    "vuex": "^4.0.2",
+    "vuex-module-decorators": "^2.0.0"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.45.0",

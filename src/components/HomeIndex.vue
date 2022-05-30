@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-tabs size="small" :tab-bar-gutter="10" :active-key="currentView" @change="changeViewPanel">
+    <a-tabs size="small" :tab-bar-gutter="16" :active-key="currentView" @change="changeViewPanel">
       <a-tab-pane
         v-for="panel of Object.values(ViewPanel)"
         :key="panel"
@@ -27,29 +27,28 @@
     <RadiusPanel v-show="currentView === ViewPanel.BORDER_RADIUS" :border-radius="theme.borderRadius"></RadiusPanel>
     <!-- 阴影 -->
     <ShadowPanel v-show="currentView === ViewPanel.SHADOW" :box-shadow="theme.boxShadow"></ShadowPanel>
+    <!--边距-->
+    <SpacingPanel v-show="currentView === ViewPanel.SPACING"></SpacingPanel>
+    <!--TODO screens-->
+    <!--TODO 兼容IE10-->
     <!--  导出-->
     <ExportPanel v-show="currentView === ViewPanel.EXPORT" :theme="theme"></ExportPanel>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { ITheme, ViewPanel, ViewPanelNameMapping } from '@/business'
+import { computed, ref } from 'vue'
+import { ViewPanel, ViewPanelNameMapping } from '@/business'
 import ColorsPanel from '@/components/ColorsPanel.vue'
 import TypographyPanel from '@/components/TypographyPanel.vue'
 import ShadowPanel from '@/components/ShadowPanel.vue'
 import RadiusPanel from '@/components/RadiusPanel.vue'
 import ExportPanel from '@/components/ExportPanel.vue'
+import GlobalStore from '@/store/global'
+import SpacingPanel from '@/components/SpacingPanel.vue'
 // 当前展示视图
 const currentView = ref<ViewPanel>(ViewPanel.COLORS)
-const theme = ref<ITheme>({
-  colors: [],
-  borderRadius: [],
-  boxShadow: [],
-  fontFamily: [],
-  fontSize: [],
-  gradientColors: [],
-})
+const theme = computed(() => GlobalStore.theme)
 
 // 切换视图
 const changeViewPanel = (target: ViewPanel) => {
@@ -58,8 +57,9 @@ const changeViewPanel = (target: ViewPanel) => {
 
 // 获取来自figma js沙箱的主题配置
 onmessage = (event) => {
-  theme.value = event.data.pluginMessage
-  console.log(event.data.pluginMessage)
+  GlobalStore.setState({
+    theme: event.data.pluginMessage,
+  })
   onmessage = null
 }
 </script>

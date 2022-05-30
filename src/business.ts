@@ -5,6 +5,7 @@ export enum ViewPanel {
   // BORDER = 'BORDER',
   BORDER_RADIUS = 'BORDER_RADIUS',
   SHADOW = 'SHADOW',
+  SPACING = 'SPACING',
   EXPORT = 'EXPORT',
 }
 
@@ -14,7 +15,7 @@ export const ViewPanelNameMapping = {
   [ViewPanel.BORDER_RADIUS]: '圆角',
   [ViewPanel.TYPOGRAPHY]: '字体/字号',
   [ViewPanel.COLORS]: '颜色',
-  // [ViewPanel.BORDER]: '边框',
+  [ViewPanel.SPACING]: '边距',
 }
 
 export type KV = {
