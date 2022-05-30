@@ -35,7 +35,7 @@ theme.borderRadius.push(...finalRadii)
 
 // options
 const options = {
-  width: 500,
+  width: 600,
   height: 600,
 }
 

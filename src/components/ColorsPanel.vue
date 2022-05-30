@@ -3,7 +3,10 @@
     <div class="space-y-8px">
       <div v-for="item of props.colors" :key="item.name" class="flex justify-between">
         <div class="flex items-center">
-          <div class="h-30px w-30px rounded-20px shadow mr-8px" :style="`background:${item.value} `"></div>
+          <div
+            class="h-30px w-30px rounded-20px mr-8px border-1px border-solid border-gray-200"
+            :style="`background:${item.value} `"
+          ></div>
           {{ item.name }}
         </div>
         <div class="flex items-center">{{ item.value }}</div>
