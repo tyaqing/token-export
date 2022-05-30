@@ -32,7 +32,7 @@ const code = computed(() => {
   // 处理spacing
   const { spacing } = GlobalStore
   const str = JSON.stringify({
-    config,
+    ...config,
     spacing,
   })
   return beautify(str)
