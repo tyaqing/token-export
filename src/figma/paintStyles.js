@@ -15,7 +15,9 @@ export default function() {
       if (color){
         const { name } = style;
         const {r, g, b} = makeRgb(color);
-        const value = makeHex(r, g, b) + opacity.toFixed(2)*100;
+        const opacityPercent = opacity.toFixed(2)*100;
+        // const value = makeHex(r, g, b) + opacity.toFixed(2)*100;
+        const value =  opacityPercent===100?`rgba(${r},${g},${b})`:`rgba(${r},${g},${b},${opacityPercent}%)`
         const result = { name, value };
         colors.push(result);
       }

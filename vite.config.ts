@@ -3,11 +3,16 @@ import vue from "@vitejs/plugin-vue"
 import {viteSingleFile} from "vite-plugin-singlefile"
 import WindiCSS from 'vite-plugin-windicss'
 import * as path from 'path'
+import Components from 'unplugin-vue-components/vite'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers'
 export default defineConfig({
   plugins: [
     vue(),
     viteSingleFile(),
     WindiCSS(),
+    Components({
+      resolvers: [AntDesignVueResolver({})],
+    }),
   ],
   resolve: {
     alias: {
