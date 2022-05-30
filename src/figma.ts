@@ -1,9 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import getPaintStyles from './figma/paintStyles'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import getTextStyles from './figma/textStyles'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import getEffectStyles from './figma/effectStyles'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import getNodeStyles from './figma/nodeStyles'
 
@@ -26,11 +30,23 @@ const { shadows } = getEffectStyles()
 const { finalRadii } = getNodeStyles()
 
 // Create theme
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 theme.colors.push(...colors)
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 theme.gradientColors.push(...gradientColors)
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 theme.fontSize.push(...finalSizes)
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 theme.fontFamily.push(...finalFamilies)
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 theme.boxShadow.push(...shadows)
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 theme.borderRadius.push(...finalRadii)
 
 // options

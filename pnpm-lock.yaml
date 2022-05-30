@@ -2,6 +2,9 @@ lockfileVersion: 5.4
 
 specifiers:
   '@figma/plugin-typings': ^1.45.0
+  '@types/js-beautify': ^1.13.3
+  '@types/lodash': ^4.14.182
+  '@types/prismjs': ^1.26.0
   '@typescript-eslint/eslint-plugin': ^5.26.0
   '@typescript-eslint/parser': ^5.26.0
   '@vitejs/plugin-vue': ^2.3.1
@@ -12,6 +15,7 @@ specifiers:
   eslint-plugin-prettier: ^4.0.0
   eslint-plugin-vue: ^9.0.1
   js-beautify: ^1.14.3
+  lodash: ^4.17.21
   prettier: ^2.6.2
   prismjs: ^1.28.0
   typescript: ^4.5.4
@@ -28,12 +32,16 @@ specifiers:
 dependencies:
   ant-design-vue: 3.2.5_vue@3.2.33
   js-beautify: 1.14.3
+  lodash: 4.17.21
   prismjs: 1.28.0
   vue: 3.2.33
   vue-prism-editor: 2.0.0-alpha.2_vue@3.2.33
 
 devDependencies:
   '@figma/plugin-typings': 1.45.0
+  '@types/js-beautify': 1.13.3
+  '@types/lodash': 4.14.182
+  '@types/prismjs': 1.26.0
   '@typescript-eslint/eslint-plugin': 5.26.0_wivx53a35sqhwelgbalge3lydy
   '@typescript-eslint/parser': 5.26.0_reun3rbo3hfs2wfw2yzdf7eyze
   '@vitejs/plugin-vue': 2.3.1_vite@2.9.6+vue@3.2.33
@@ -211,12 +219,24 @@ packages:
     resolution: {integrity: sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==}
     dev: true
 
+  /@types/js-beautify/1.13.3:
+    resolution: {integrity: sha512-ucIPw5gmNyvRKi6mpeojlqp+T+6ZBJeU+kqMDnIEDlijEU4QhLTon90sZ3cz9HZr+QTwXILjNsMZImzA7+zuJA==}
+    dev: true
+
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: true
 
+  /@types/lodash/4.14.182:
+    resolution: {integrity: sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==}
+    dev: true
+
   /@types/node/17.0.29:
     resolution: {integrity: sha512-tx5jMmMFwx7wBwq/V7OohKDVb/JwJU5qCVkeLMh1//xycAJ/ESuw9aJ9SEtlCZDYi2pBfe4JkisSoAtbOsBNAA==}
+    dev: true
+
+  /@types/prismjs/1.26.0:
+    resolution: {integrity: sha512-ZTaqn/qSqUuAq1YwvOFQfVW1AR/oQJlLSZVustdjwI+GZ8kr0MSHBj0tsXPW1EqHubx50gtBEjbPGsdZwQwCjQ==}
     dev: true
 
   /@types/resolve/1.17.1:

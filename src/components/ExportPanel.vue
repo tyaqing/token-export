@@ -4,7 +4,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { computed, defineProps, ref } from 'vue'
+import { computed, defineProps } from 'vue'
 import { ITheme } from '@/business'
 import { PrismEditor } from 'vue-prism-editor'
 import 'vue-prism-editor/dist/prismeditor.min.css' // import the styles somewhere
@@ -13,14 +13,31 @@ import { highlight, languages } from 'prismjs/components/prism-core'
 import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/themes/prism-tomorrow.css' // import syntax highlighting styles
-
+import { set } from 'lodash'
+// code
 const code = computed(() => {
-  const str = JSON.stringify(props.theme)
+  // 处理拼装
+  const { theme } = props
+  const config = {}
+  // 处理颜色
+  theme.colors.forEach((item) => {
+    const path = item.name.replace(/\//g, '.')
+    set(config, 'colors.' + path, item.value)
+  })
+  // 处理字体
+  theme.fontFamily.forEach((item) => {
+    const path = item.name.replace(/\//g, '.')
+    console.log(path)
+    set(config, 'fontFamily.' + path, item.value)
+  })
+  // 处理字号
+  const str = JSON.stringify(config)
   return beautify(str)
 })
 const props = defineProps<{
   theme: ITheme
 }>()
+// 高粱
 const highlighter = (c: string) => {
   return highlight(c, languages.js) // languages.<insert language> to return html with markup
 }
