@@ -5,18 +5,20 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ACheckbox: typeof import('ant-design-vue/es')['Checkbox']
+    ACheckboxGroup: typeof import('ant-design-vue/es')['CheckboxGroup']
     AForm: typeof import('ant-design-vue/es')['Form']
     AFormItem: typeof import('ant-design-vue/es')['FormItem']
-    AInput: typeof import('ant-design-vue/es')['Input']
     AInputNumber: typeof import('ant-design-vue/es')['InputNumber']
+    ASpin: typeof import('ant-design-vue/es')['Spin']
     ATabPane: typeof import('ant-design-vue/es')['TabPane']
     ATabs: typeof import('ant-design-vue/es')['Tabs']
     ColorsPanel: typeof import('./src/components/ColorsPanel.vue')['default']
+    ConfigPanel: typeof import('./src/components/ConfigPanel.vue')['default']
     ExportPanel: typeof import('./src/components/ExportPanel.vue')['default']
     HomeIndex: typeof import('./src/components/HomeIndex.vue')['default']
     RadiusPanel: typeof import('./src/components/RadiusPanel.vue')['default']
     ShadowPanel: typeof import('./src/components/ShadowPanel.vue')['default']
-    SpacingPanel: typeof import('./src/components/SpacingPanel.vue')['default']
     TypographyPanel: typeof import('./src/components/TypographyPanel.vue')['default']
   }
 }

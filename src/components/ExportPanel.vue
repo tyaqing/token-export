@@ -22,10 +22,9 @@ const code = computed(() => {
   const config = {}
   // 处理配置
   Object.entries(theme).forEach(([key, value]) => {
-    console.log(value)
     value.length &&
       value.forEach((item: KV) => {
-        const path = item.name.replace(/\//g, '.')
+        const path = item.name.replace('shadow/', '').replace(/\//g, '.')
         set(config, key + '.' + path, item.value)
       })
   })

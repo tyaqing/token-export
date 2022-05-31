@@ -60,9 +60,6 @@ figma.showUI(__html__, options)
 // pass theme
 figma.ui.postMessage(theme)
 
-const colorStyles = figma.getLocalPaintStyles()
-console.log(colorStyles)
-
 // Calls to "parent.postMessage" from within the HTML page will trigger this
 // callback. The callback will be passed the "pluginMessage" property of the
 // posted message.
