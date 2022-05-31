@@ -13,6 +13,9 @@
       <a-form-item label="拓展">
         <a-checkbox-group v-model:value="plugin" name="checkboxgroup" :options="options" />
       </a-form-item>
+      <a-form-item label="screens">
+        <a-input></a-input>
+      </a-form-item>
     </a-form>
   </div>
 </template>

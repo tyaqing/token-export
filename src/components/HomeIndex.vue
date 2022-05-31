@@ -30,9 +30,7 @@
     <ShadowPanel v-show="currentView === ViewPanel.SHADOW" :box-shadow="theme.boxShadow"></ShadowPanel>
     <!--边距-->
     <ConfigPanel v-show="currentView === ViewPanel.CONFIG"></ConfigPanel>
-    <!--TODO screens-->
-    <!--TODO 兼容IE10-->
-    <!--  导出-->
+    <!-- 导出-->
     <ExportPanel v-show="currentView === ViewPanel.EXPORT" :theme="theme"></ExportPanel>
   </div>
 </template>

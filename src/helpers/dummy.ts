@@ -21,7 +21,7 @@ const dummyTheme = {
     { name: 'default/red/800', value: '#9b2c2c' },
     { name: 'default/red/900', value: '#742a2a' },
     { name: 'default/orange/100', value: '#fffaf0' },
-    { name: 'default/orange/200', value: '#feebc8' }
+    { name: 'default/orange/200', value: '#feebc8' },
   ],
   fontSize: [
     { name: '', value: '12' },
@@ -33,20 +33,20 @@ const dummyTheme = {
     { name: '', value: '30' },
     { name: '', value: '36' },
     { name: '', value: '48' },
-    { name: '', value: '64' }
+    { name: '', value: '64' },
   ],
   fontFamily: [
     {
       name: 'source-sans-pro',
-      value: 'source sans pro'
+      value: 'source sans pro',
     },
     {
       name: 'arial',
-      value: 'arial'
-    }
+      value: 'arial',
+    },
   ],
   baseFontSize: false,
-  groupColor: false
-};
+  groupColor: false,
+}
 
-export default dummyTheme;
+export default dummyTheme
