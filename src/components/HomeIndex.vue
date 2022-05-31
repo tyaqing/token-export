@@ -8,9 +8,9 @@
       ></a-tab-pane>
     </a-tabs>
   </div>
-  <!--这里overflow在阴影下可能有坑，就是tab拦也滚动，暂时先不处理，应该不会有人用9个以上的shadow吧-->
-  <a-spin
-    :spinning="spinning"
+  <a-spin :spinning="spinning"></a-spin>
+  <!--这里overflow在阴影下可能有坑，就是tab拦也滚动，暂时先不处理，应该不会有人用12个以上的shadow吧😄-->
+  <div
     class="mt-12px flex-1 h-full"
     :class="{
       'overflow-auto': currentView !== ViewPanel.SHADOW,
@@ -34,7 +34,7 @@
     <!--TODO 兼容IE10-->
     <!--  导出-->
     <ExportPanel v-show="currentView === ViewPanel.EXPORT" :theme="theme"></ExportPanel>
-  </a-spin>
+  </div>
 </template>
 
 <script lang="ts" setup>

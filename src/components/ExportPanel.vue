@@ -34,7 +34,9 @@ const code = computed(() => {
     ...config,
     spacing,
   })
-  return beautify(str)
+  return beautify(str, {
+    indent_size: 2,
+  })
 })
 const props = defineProps<{
   theme: ITheme
