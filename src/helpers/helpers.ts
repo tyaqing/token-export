@@ -1,4 +1,6 @@
-export function calculatePosition(index, basePosition, length) {
+import { ITheme, KV } from '@/business'
+
+export function calculatePosition(index: number, basePosition: number, length: number) {
   let value = ''
   if (index === basePosition) {
     value = 'base'
@@ -23,7 +25,7 @@ export function calculatePosition(index, basePosition, length) {
   return value
 }
 
-export function getPart(name, i) {
+export function getPart(name: string, i: number) {
   let cleanName = name
   const parts = name.split('/')
   if (name.indexOf('/') !== -1) {
@@ -32,8 +34,8 @@ export function getPart(name, i) {
   return cleanName
 }
 
-export function groupColors(colors) {
-  const groupedColors = {}
+export function groupColors(colors: KV[]) {
+  const groupedColors: Record<string, any> = {}
   colors.forEach((color) => {
     const { name, value } = color
     const key = getPart(name, 2)
@@ -44,7 +46,7 @@ export function groupColors(colors) {
     if (cleanName === name) {
       groupedColors[key] = value
     } else {
-      const newItem = {}
+      const newItem: Record<string, string> = {}
       newItem[cleanName] = value
       groupedColors[key] = Object.assign(groupedColors[key], { ...newItem })
     }
@@ -52,7 +54,7 @@ export function groupColors(colors) {
   return groupedColors
 }
 
-export function cleanupTheme(theme) {
+export function cleanupTheme(theme: ITheme) {
   const cleanTheme = {}
   // Specify what keys to output in theme
   const allowedKeys = ['colors', 'fontFamily', 'fontSize', 'boxShadow', 'borderRadius']
@@ -61,10 +63,10 @@ export function cleanupTheme(theme) {
     // Check to remove simple global state items
     if (Array.isArray(values) && allowedKeys.includes(key) && Object.keys(values).length > 0) {
       // Theme item
-      const themeItem = {}
+      const themeItem: Record<string, any> = {}
       // Make a key/value pair
       const cleanArray = values.map(({ name, value }) => {
-        const cleanItem = {}
+        const cleanItem: Record<string, string> = {}
         // Custom transforms, based on type
         switch (key) {
           case 'fontSize':
@@ -77,7 +79,7 @@ export function cleanupTheme(theme) {
       })
       // Return
       const cleanValues = Object.assign({}, ...cleanArray)
-      if (key === 'colors' && grouped) {
+      if (key === 'colors') {
         themeItem[key] = groupColors(values)
       } else {
         themeItem[key] = cleanValues
@@ -88,7 +90,7 @@ export function cleanupTheme(theme) {
   return cleanTheme
 }
 
-export function rgbToHex(int) {
+export function rgbToHex(int: number) {
   let hex = Number(int).toString(16)
   if (hex.length < 2) {
     hex = `0${hex}`
@@ -96,14 +98,14 @@ export function rgbToHex(int) {
   return hex
 }
 
-export function makeHex(r, g, b) {
+export function makeHex(r: number, g: number, b: number) {
   const red = rgbToHex(r)
   const green = rgbToHex(g)
   const blue = rgbToHex(b)
   return `#${red}${green}${blue}`
 }
 
-export function makeRgb(color) {
+export function makeRgb(color: any) {
   const r = Math.round(255 * color.r)
   const g = Math.round(255 * color.g)
   const b = Math.round(255 * color.b)
