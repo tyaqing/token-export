@@ -1,10 +1,10 @@
-import getPaintStyles from './figma/paintStyles'
+import { getPaintStyles } from './figma/paintStyles'
 import getTextStyles from './figma/textStyles'
 import getEffectStyles from './figma/effectStyles'
 import getNodeStyles from './figma/nodeStyles'
 
 // theme
-const theme = {
+const theme: any = {
   colors: [],
   gradientColors: [],
   fontSize: [],

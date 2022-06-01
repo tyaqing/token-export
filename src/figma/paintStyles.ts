@@ -1,7 +1,7 @@
 import { makeHex, makeRgb } from '@/helpers/helpers'
 import { KV } from '@/business'
 
-export default function () {
+export function getPaintStyles() {
   // eslint-disable-next-line
   const colorStyles = figma.getLocalPaintStyles();
   const colors: KV[] = [] // array of hex values and their names
