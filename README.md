@@ -1,7 +1,7 @@
 ![banner](https://user-images.githubusercontent.com/11229306/172000890-452ad2bf-4ba6-4f6c-a0d7-79b245a7df5d.png)
 
 # Token Export / Token导出工具
-将figma规范中的样式导出为tailwindcss、windicss配置
+将figma规范中的样式导出为tailwindcss、windicss配置,目前已经满足基本使用,其他高频功能正在开发中,也欢迎大家一起贡献
 
 **TODO**
 
@@ -12,7 +12,8 @@
 
 # 使用说明
 
-> 项目内必须有token,否则配置无法被插件扫出
+> 项目内必须有token,否则配置无法被插件扫出,[怎么创建Token](https://github.com/tyaqing/token-export/blob/master/README.md#%E6%80%8E%E4%B9%88%E5%88%9B%E5%BB%BAtoken)
+
 <img width="481" alt="image" src="https://user-images.githubusercontent.com/11229306/172010429-dedc79f4-8f9b-48da-83fd-9c3b89026636.png">
 
 插件通过扫描项目内的library配置,获得颜色,字体等token,生成最后使用的config
