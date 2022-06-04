@@ -7,6 +7,7 @@
 import HomeIndex from '@/components/HomeIndex.vue'
 import { imgReport } from '@/helpers/report'
 import qs from 'qs'
+import { onMounted } from 'vue'
 const data = qs.stringify({
   referer: document.referrer,
   client_time: new Date(),
@@ -14,18 +15,13 @@ const data = qs.stringify({
   project: 'token-export',
   env: 'production',
   ua: navigator.userAgent,
-  ext4: 'undefined',
   version: 1,
-  ext3: 'undefined',
   url: '/',
-  ext2: 'undefined',
-  ext1: 'undefined',
 })
 const url = 'https://service-j0lpvd1n-1251054923.sh.apigw.tencentcs.com/release/log'
-imgReport(`${url}?${data}`)
+// 这里简单做下上报，统计下使用情况
+onMounted(() => {
+  console.log('mouted')
+  imgReport(`${url}?${data}`)
+})
 </script>
-<style>
-body {
-  /*background-color: #f3f5f7;*/
-}
-</style>

@@ -1,0 +1,10 @@
+{
+  "name": "token-export",
+  "id": "1114905578502508823",
+  "api": "1.0.0",
+  "main": "figma.js",
+  "editorType": [
+    "figma"
+  ],
+  "ui": "index.html"
+}

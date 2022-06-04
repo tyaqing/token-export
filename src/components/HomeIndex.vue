@@ -1,4 +1,16 @@
 <template>
+  <div class="absolute right-8px top-8px space-x-10px">
+    <a-typography-link href="https://github.com/tyaqing/windicss-export" target="_blank">
+      项目地址
+      <GithubOutlined></GithubOutlined>
+    </a-typography-link>
+    <a-typography-link href="https://github.com/tyaqing/windicss-export/blob/master/README.md" target="_blank">
+      使用教程
+    </a-typography-link>
+    <a-typography-link href="https://github.com/tyaqing/windicss-export/issues" target="_blank">
+      建议/反馈
+    </a-typography-link>
+  </div>
   <div>
     <a-tabs size="small" :tab-bar-gutter="16" :active-key="currentView" @change="changeViewPanel">
       <a-tab-pane
@@ -37,6 +49,7 @@
 
 <script lang="ts" setup>
 import { computed, onBeforeMount, ref } from 'vue'
+import { GithubOutlined } from '@ant-design/icons-vue'
 import { ViewPanel, ViewPanelNameMapping } from '@/business'
 import ColorsPanel from '@/components/ColorsPanel.vue'
 import TypographyPanel from '@/components/TypographyPanel.vue'
