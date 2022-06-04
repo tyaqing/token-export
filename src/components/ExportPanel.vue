@@ -13,23 +13,31 @@ import { highlight, languages } from 'prismjs/components/prism-core'
 import 'prismjs/components/prism-clike'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/themes/prism-tomorrow.css' // import syntax highlighting styles
-import { set } from 'lodash'
-import GlobalStore from '@/store/global'
-// code
+import { set, cloneDeep } from 'lodash'
+import GlobalStore, { RadiusFrom } from '@/store/global'
+// 配置code
 const code = computed(() => {
   // 处理拼装
-  const { theme } = props
+  const theme = cloneDeep(props.theme)
   const config = {}
+  // 如果是自定义边距需要覆盖
+  if (GlobalStore.radiusFrom === RadiusFrom.MANUAL) {
+    theme.borderRadius = GlobalStore.customRadius.filter((item) => {
+      // 只导出有内容的样式
+      return item.name && item.value
+    })
+  }
   // 处理配置
+  const { spacing, tokenFormat } = GlobalStore
   Object.entries(theme).forEach(([key, value]) => {
     value.length &&
       value.forEach((item: KV) => {
-        const path = item.name.replace('shadow/', '').replace(/\//g, '.')
+        const reg = new RegExp(tokenFormat, 'g')
+        const path = item.name.replace('shadow/', '').replace(reg, '.')
         set(config, key + '.' + path, item.value)
       })
   })
   // 处理spacing
-  const { spacing } = GlobalStore
   const str = JSON.stringify({
     ...config,
     spacing,

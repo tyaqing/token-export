@@ -1,7 +1,7 @@
 {
-  "name": "windicss-export",
+  "name": "token-export",
   "id": "1101412909703000918",
-  "api": "1.0.0",
+  "api": "0.1.0",
   "main": "dist/figma.js",
   "editorType": [
     "figma"

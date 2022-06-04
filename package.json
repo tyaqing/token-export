@@ -1,7 +1,7 @@
 {
   "name": "windicss-export",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "dev": "vite",
     "watch": "vite build --watch",
@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "^3.2.5",
     "js-beautify": "^1.14.3",
     "lodash": "^4.17.21",
     "prismjs": "^1.28.0",
+    "qs": "^6.10.3",
     "vue": "^3.2.25",
     "vue-prism-editor": "2.0.0-alpha.2",
     "vuex": "^4.0.2",
@@ -23,6 +25,7 @@
     "@types/js-beautify": "^1.13.3",
     "@types/lodash": "^4.14.182",
     "@types/prismjs": "^1.26.0",
+    "@types/qs": "^6.9.7",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
     "@vitejs/plugin-vue": "^2.3.1",
