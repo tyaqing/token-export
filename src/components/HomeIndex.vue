@@ -1,13 +1,13 @@
 <template>
   <div class="absolute right-8px top-8px space-x-10px">
-    <a-typography-link href="https://github.com/tyaqing/windicss-export" target="_blank">
+    <a-typography-link href="https://github.com/tyaqing/token-export" target="_blank">
       项目地址
       <GithubOutlined></GithubOutlined>
     </a-typography-link>
-    <a-typography-link href="https://github.com/tyaqing/windicss-export/blob/master/README.md" target="_blank">
+    <a-typography-link href="https://github.com/tyaqing/token-export/blob/master/README.md" target="_blank">
       使用教程
     </a-typography-link>
-    <a-typography-link href="https://github.com/tyaqing/windicss-export/issues" target="_blank">
+    <a-typography-link href="https://github.com/tyaqing/token-export/issues" target="_blank">
       建议/反馈
     </a-typography-link>
   </div>
