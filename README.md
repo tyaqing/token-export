@@ -2,6 +2,7 @@
 
 # Token Export / Token导出工具
 将figma规范中的样式导出为tailwindcss、windicss配置,目前已经满足基本使用,其他高频功能正在开发中,也欢迎大家一起贡献
+[figma插件地址](https://www.figma.com/community/plugin/1114905578502508823)
 
 **TODO**
 
